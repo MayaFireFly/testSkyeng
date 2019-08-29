@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;        
+}
+.wrapper{
+    width: 50%;
+    padding: 2em;
+}
+.row{
+    padding: 0.5em;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;    
+    grid-template-areas:
+    "col-1 col-2";
+}
+.col-1{
+    grid-area: col-1;
+}
+.col-2{
+    grid-area: col-2;
+}
+.btn{
+    width: 100%;
+}

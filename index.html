@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Loop 1 - Step 1</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <script>     
+    function showModal(elem){   
+
+      var modal = document.getElementById("modalConfirm");
+      var containerForContent = document.getElementById("demoCard");
+      var dfh = document.getElementById("divForHidden");
+
+      dfh.style.zIndex = "50";
+      dfh.style.backgroundColor = "rgba(97,97,97,0.3)";     
+
+      containerForContent.innerHTML = elem.innerHTML;
+
+      modal.style.display = "block";
+    }
+
+    function hideModal(){
+
+      var modal = document.getElementById("modalConfirm");
+      var dfh = document.getElementById("divForHidden");
+
+      modal.style.display = "none";
+      
+      dfh.style.zIndex = "-1";
+      dfh.style.backgroundColor = "#85a5d4";
+    }        
+  </script>
+</head>
+<body> 
+
+    <div id="divForHidden" onclick="hideModal()"></div>
+
+    <div class="wrapper">
+
+      <div class="card" id="mobile" onclick="showModal(this)">
+        <img src="img/device.svg" alt="mobile"/>
+        <div class="container">
+          <h4>MOBILE</h4>
+          <p>Get notifications about new releases in our mobile app.</p>
+          <h6><span class="price"><sup>$</sup>10</span>/month</h6>
+        </div>
+      </div>
+
+      <div class="card" id="desktop" onclick="showModal(this)">
+        <img src="img/laptop.svg" alt="desktop"/>
+        <div class="container">
+          <h4>DESKTOP</h4>
+          <p>Enjoy new episodes on your laptop in browser with our web service, wich supports all the platforms.</p>
+          <h6><span class="price"><sup>$</sup>15</span>/month</h6>
+        </div>
+      </div>
+
+      <div class="card" id="tv" onclick="showModal(this)">
+        <img src="img/monitor.svg" alt="tv"/>
+        <div class="container">
+          <h4>TV</h4>
+          <p>Watch your favorite series at home on large screen with our TV application.</p>
+          <h6><span class="price"><sup>$</sup>20</span>/month</h6>
+        </div>
+      </div>
+
+      <div class="container btn-container">
+        <button class="btn">Give feedback</button>
+      </div>
+
+
+      <div id="modalConfirm" class="modal">
+        <div class="modalConfirm-content">
+          <div class="h3em"><span id="close" onclick="hideModal()">X</span></div>
+          <div id="demoCard"></div>          
+          <div class="container btn-container">
+            <button class="btn">Confirm</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  
+</body>
+</html>
